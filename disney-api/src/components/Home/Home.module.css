@@ -1,17 +1,30 @@
-.wrapper {
+/* .wrapper {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2em;
+} */
+
+.popularCharacters {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 3em;
+	width: 100%;
+	margin-bottom: 3em;
+	padding: 4em 0;
+	/* border: 2px solid var(--clr-light); */
+	border-radius: 10px;
+	color: aliceblue;
 }
 
 .allCharacters {
-	/* display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center; */
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2em;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2em;
 }

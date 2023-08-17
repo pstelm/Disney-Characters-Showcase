@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
+import { PopularCharacterCard } from '../PopularCharacterCard/PopularCharacterCard';
 
 export const Home = () => {
 	const [charactersList, setCharactersList] = useState([]);
 	const [filteredCharactersList, setFilteredCharactersList] = useState([]);
+	const [popularCharactersList, setPopularCharactersList] = useState([]);
 	const [favouritesList, setFavouritesList] = useState([]);
 
 	const getData = async () => {
@@ -46,7 +48,13 @@ export const Home = () => {
 		const filteredCharacters = charactersList.filter((character) => {
 			if (character.films.length > 0) return true;
 		});
+
+		const sortedCharacters = [...filteredCharactersList].sort((a, b) =>
+			a.films.length < b.films.length ? 1 : b.films.length < a.films.length ? -1 : 0
+		);
+
 		setFilteredCharactersList(filteredCharacters);
+		setPopularCharactersList(sortedCharacters.slice(0, 3));
 	};
 
 	useEffect(() => {
@@ -58,12 +66,20 @@ export const Home = () => {
 	}, [charactersList]);
 
 	// console.log(charactersList);
-	// console.log(filteredCharactersList);
+	// console.log('Filtered:', filteredCharactersList);
+	console.log('Sorted:', popularCharactersList);
 	// console.log(charactersList.length);
 
 	return (
-		<div className={styles.wrapper}>
-			<div className={styles.popular}></div>
+		<>
+			<div className={styles.popularCharacters}>
+				{popularCharactersList && popularCharactersList.length > 0
+					? popularCharactersList.map((character) => (
+							<PopularCharacterCard key={character._id} {...character} />
+					  ))
+					: null}
+			</div>
+
 			<div className={styles.allCharacters}>
 				{filteredCharactersList
 					? filteredCharactersList.map((character) => (
@@ -75,6 +91,6 @@ export const Home = () => {
 					  ))
 					: null}
 			</div>
-		</div>
+		</>
 	);
 };
