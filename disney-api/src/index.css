@@ -3,7 +3,7 @@
 	--clr-grey: hsla(0, 0%, 14%, 20%);
 	--clr-charcoal: hsl(0, 0%, 14%);
 	--clr-black: hsl(0, 0%, 0%);
-	--clr-dark-blue: hsl(221, 64%, 26%);
+	--clr-dark-blue: hsl(231, 91%, 13%);
 	--clr-orange: hsla(32, 98%, 56%, 1);
 
 	--font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -24,7 +24,6 @@
 }
 
 body {
-	width: 100vw;
 	min-height: 100vh;
 	background-color: var(--clr-dark-blue);
 	color: var(--clr-charcoal);
