@@ -1,0 +1,30 @@
+:root {
+	--clr-light: hsla(0, 0%, 100%, 1);
+	--clr-grey: hsla(0, 0%, 14%, 20%);
+	--clr-charcoal: hsl(0, 0%, 14%);
+	--clr-black: hsl(0, 0%, 0%);
+	--clr-light-blue: hsl(180, 100%, 97%);
+	--clr-orange: hsla(32, 98%, 56%, 1);
+
+	--font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+	--fw-normal: 400;
+	--fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: var(--clr-light);
+	color: var(--clr-charcoal);
+	font-family: var(--font-family);
+	font-weight: var(--fw-normal);
+}
