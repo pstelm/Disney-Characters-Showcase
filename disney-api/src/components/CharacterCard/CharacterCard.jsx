@@ -10,6 +10,7 @@ export const CharacterCard = ({ _id, name, imageUrl, tvShows, setFavouritesList 
 				))}
 			</Tooltip>
 			<div className={styles.card}>
+				{' '}
 				<img src={imageUrl} className={styles.characterImg} alt={`Image of ${name}`} />
 				<div className={styles.characterInfo}>
 					<h3 className={styles.characterName}>

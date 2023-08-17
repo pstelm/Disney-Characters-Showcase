@@ -20,7 +20,7 @@
 
 .defaultLink,
 .activeLink {
-	margin-left: 2em;
+	margin-left: 3em;
 	color: var(--clr-black);
 	font-weight: var(--fw-bold);
 	text-decoration: none;
