@@ -3,13 +3,16 @@
 	--clr-grey: hsla(0, 0%, 14%, 20%);
 	--clr-charcoal: hsl(0, 0%, 14%);
 	--clr-black: hsl(0, 0%, 0%);
-	--clr-light-blue: hsl(180, 100%, 97%);
+	--clr-dark-blue: hsl(221, 64%, 26%);
 	--clr-orange: hsla(32, 98%, 56%, 1);
 
 	--font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 	--fw-normal: 400;
 	--fw-bold: 700;
+
+	--fz-normal: 14px;
+	--fz-big: 22px;
 }
 
 *,
@@ -23,8 +26,12 @@
 body {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: var(--clr-light);
+	background-color: var(--clr-dark-blue);
 	color: var(--clr-charcoal);
 	font-family: var(--font-family);
 	font-weight: var(--fw-normal);
+}
+
+button {
+	cursor: pointer;
 }

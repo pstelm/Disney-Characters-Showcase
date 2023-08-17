@@ -1,0 +1,36 @@
+.card {
+	display: flex;
+	align-items: center;
+	height: 75px;
+	border-radius: 5px;
+	background-color: var(--clr-light);
+	overflow: hidden;
+}
+
+.characterImg {
+	display: block;
+	width: 25%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.characterInfo {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+	padding: 0.5em 1em;
+	font-size: var(--fz-normal);
+}
+
+.tvIcon {
+	height: var(--fz-normal);
+}
+
+.addToFavourites {
+	background-color: transparent;
+	border: none;
+}
+
+.addToFavourites img {
+	height: var(--fz-big);
+}

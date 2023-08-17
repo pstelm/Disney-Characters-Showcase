@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from './Home.module.css';
+import { CharacterCard } from '../CharacterCard/CharacterCard';
 
 export const Home = () => {
 	const [charactersList, setCharactersList] = useState([]);
+	const [favouritesList, setFavouritesList] = useState([]);
 
 	const getData = async () => {
 		try {
@@ -49,9 +51,9 @@ export const Home = () => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.popular}></div>
-			<div className={styles.characters}>
+			<div className={styles.allCharacters}>
 				{charactersList
-					? charactersList.map((character) => <li key={character._id}>{character.name}</li>)
+					? charactersList.map((character) => <CharacterCard key={character._id} {...character} />)
 					: null}
 			</div>
 		</div>

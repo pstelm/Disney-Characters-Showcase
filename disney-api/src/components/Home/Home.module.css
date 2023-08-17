@@ -1,0 +1,17 @@
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2em;
+}
+
+.allCharacters {
+	/* display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center; */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2em;
+}
