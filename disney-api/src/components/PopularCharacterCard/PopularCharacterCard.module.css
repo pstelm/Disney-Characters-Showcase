@@ -1,0 +1,30 @@
+.card {
+	height: 250px;
+	width: 200px;
+	background-color: var(--clr-light);
+	color: var(--clr-black);
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 0 10px 2px var(--clr-charcoal);
+}
+
+.characterImg {
+	display: block;
+	height: 60%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.characterInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 40%;
+	padding: 0.5em 1em;
+}
+
+.characterStats p {
+	display: flex;
+	justify-content: space-between;
+	font-weight: var(--fw-semi-bold);
+}

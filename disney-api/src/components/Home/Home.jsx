@@ -67,12 +67,13 @@ export const Home = () => {
 
 	// console.log(charactersList);
 	// console.log('Filtered:', filteredCharactersList);
-	console.log('Sorted:', popularCharactersList);
+	// console.log('Sorted:', popularCharactersList);
 	// console.log(charactersList.length);
 
 	return (
 		<>
 			<div className={styles.popularCharacters}>
+				<h2 className={styles.popularCharactersTitle}>Most popular Disney characters</h2>
 				{popularCharactersList && popularCharactersList.length > 0
 					? popularCharactersList.map((character) => (
 							<PopularCharacterCard key={character._id} {...character} />
@@ -86,6 +87,7 @@ export const Home = () => {
 							<CharacterCard
 								key={character._id}
 								{...character}
+								favouritesList={favouritesList}
 								setFavouritesList={setFavouritesList}
 							/>
 					  ))

@@ -1,20 +1,24 @@
 :root {
 	--clr-light: hsla(0, 0%, 100%, 1);
-	--clr-grey: hsla(0, 0%, 14%, 20%);
+	/* --clr-grey: hsla(0, 0%, 14%, 20%); */
 	--clr-charcoal: hsl(0, 0%, 14%);
 	--clr-black: hsl(0, 0%, 0%);
-	--clr-light-blue: hsl(234, 39%, 79%);
-	--clr-medium-blue: hsl(232, 25%, 40%);
+	/* --clr-light-blue: hsl(234, 39%, 79%); */
+	/* --clr-medium-blue: hsl(232, 25%, 40%); */
 	--clr-dark-blue: hsl(231, 91%, 13%);
 	--clr-orange: hsla(32, 98%, 56%, 1);
+
+	--blue-gradient: linear-gradient(0deg, hsla(231, 91%, 13%, 0.5), hsla(231, 91%, 13%, 0.7));
 
 	--font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 	--fw-normal: 400;
+	--fw-semi-bold: 500;
 	--fw-bold: 700;
 
 	--fz-normal: 14px;
 	--fz-big: 22px;
+	--fz-title: 36px;
 }
 
 *,

@@ -1,12 +1,6 @@
-/* .wrapper {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 2em;
-} */
-
 .popularCharacters {
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
@@ -14,9 +8,19 @@
 	width: 100%;
 	margin-bottom: 3em;
 	padding: 4em 0;
-	/* border: 2px solid var(--clr-light); */
-	border-radius: 10px;
-	color: aliceblue;
+	background: var(--blue-gradient), url('../../../public/disney-castle.webp');
+	background-size: cover;
+	background-position: 0 30%;
+	background-repeat: no-repeat;
+}
+
+.popularCharactersTitle {
+	width: 100%;
+	margin-bottom: 1em;
+	color: var(--clr-light);
+	font-size: var(--fz-title);
+	font-weight: var(--fw-semi-bold);
+	text-align: center;
 }
 
 .allCharacters {
