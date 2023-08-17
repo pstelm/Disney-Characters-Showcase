@@ -4,6 +4,7 @@ import { CharacterCard } from '../CharacterCard/CharacterCard';
 
 export const Home = () => {
 	const [charactersList, setCharactersList] = useState([]);
+	const [filteredCharactersList, setFilteredCharactersList] = useState([]);
 	const [favouritesList, setFavouritesList] = useState([]);
 
 	const getData = async () => {
@@ -41,19 +42,31 @@ export const Home = () => {
 		}
 	};
 
+	const filterCharactersList = () => {
+		const filteredCharacters = charactersList.filter((character) => {
+			if (character.films.length > 0) return true;
+		});
+		setFilteredCharactersList(filteredCharacters);
+	};
+
 	useEffect(() => {
 		getData();
 	}, []);
 
-	console.log(charactersList);
+	useEffect(() => {
+		filterCharactersList();
+	}, [charactersList]);
+
+	// console.log(charactersList);
+	// console.log(filteredCharactersList);
 	// console.log(charactersList.length);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.popular}></div>
 			<div className={styles.allCharacters}>
-				{charactersList
-					? charactersList.map((character) => (
+				{filteredCharactersList
+					? filteredCharactersList.map((character) => (
 							<CharacterCard
 								key={character._id}
 								{...character}
