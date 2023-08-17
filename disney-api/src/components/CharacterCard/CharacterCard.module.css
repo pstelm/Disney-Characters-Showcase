@@ -26,6 +26,10 @@
 	height: var(--fz-normal);
 }
 
+#tvShowsTooltip {
+	cursor: pointer;
+}
+
 .addToFavourites {
 	background-color: transparent;
 	border: none;

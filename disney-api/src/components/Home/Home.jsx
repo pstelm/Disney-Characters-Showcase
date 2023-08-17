@@ -46,14 +46,20 @@ export const Home = () => {
 	}, []);
 
 	console.log(charactersList);
-	console.log(charactersList.length);
+	// console.log(charactersList.length);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.popular}></div>
 			<div className={styles.allCharacters}>
 				{charactersList
-					? charactersList.map((character) => <CharacterCard key={character._id} {...character} />)
+					? charactersList.map((character) => (
+							<CharacterCard
+								key={character._id}
+								{...character}
+								setFavouritesList={setFavouritesList}
+							/>
+					  ))
 					: null}
 			</div>
 		</div>
