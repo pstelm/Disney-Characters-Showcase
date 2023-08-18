@@ -1,7 +1,37 @@
 import { Tooltip } from 'react-tooltip';
 import styles from './CharacterCard.module.css';
 
-export const CharacterCard = ({ _id, name, imageUrl, tvShows, setFavouritesList }) => {
+export const CharacterCard = ({
+	_id,
+	name,
+	imageUrl,
+	tvShows,
+	favouritesList,
+	setFavouritesList,
+}) => {
+	const handleAddToFavourites = () => {
+		if (favouritesList.includes(_id)) {
+			setFavouritesList(favouritesList.filter((charID) => charID !== _id));
+		} else {
+			setFavouritesList([...favouritesList, _id]);
+		}
+
+		console.log(favouritesList);
+	};
+
+	// useEffect(() => {
+	// 	// const starIcon = document.getElementById('{`star${_id}`}');
+	// 	if (favouritesList.includes(_id)) {
+	// 		const starIconID = `#star${_id}`;
+	// 		console.log(starIconID);
+	// 		const starIcon = document.querySelector(starIconID);
+	// 		console.log(starIcon);
+	// 		// starIcon.classList.add(styles.characterSelected);
+	// 	} else {
+	// 		// starIcon.classList.remove(styles.characterSelected);
+	// 	}
+	// }, [favouritesList]);
+
 	return (
 		<>
 			<Tooltip anchorSelect={`#tvShowsTooltip${_id}`} place="top">
@@ -17,13 +47,21 @@ export const CharacterCard = ({ _id, name, imageUrl, tvShows, setFavouritesList 
 						{name}{' '}
 						{tvShows.length > 0 ? (
 							<a id={`tvShowsTooltip${_id}`}>
-								<img src="../../../public/icons/tv-solid.svg" className={styles.tvIcon} />
+								<img
+									id={`star${_id}`}
+									src="../../../public/icons/tv-solid.svg"
+									className={styles.tvIcon}
+								/>
 							</a>
 						) : null}
 					</h3>
 
-					<button className={styles.addToFavourites}>
-						<img src="/public/icons/star-regular.svg" alt="Add to favourites" />
+					<button type="button" className={styles.addToFavourites} onClick={handleAddToFavourites}>
+						{favouritesList.includes(_id) ? (
+							<img src="/public/icons/star-filled.svg" alt="Remove from favourites" />
+						) : (
+							<img src="/public/icons/star-regular.svg" alt="Add to favourites" />
+						)}
 					</button>
 				</div>
 			</div>

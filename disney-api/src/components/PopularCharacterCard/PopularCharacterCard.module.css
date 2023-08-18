@@ -1,6 +1,6 @@
 .card {
-	height: 250px;
-	width: 200px;
+	height: 280px;
+	width: 220px;
 	background-color: var(--clr-light);
 	color: var(--clr-black);
 	border-radius: 5px;
@@ -23,8 +23,25 @@
 	padding: 0.5em 1em;
 }
 
+.characterName {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 2em;
+}
+
 .characterStats p {
 	display: flex;
 	justify-content: space-between;
 	font-weight: var(--fw-semi-bold);
+}
+
+.addToFavourites {
+	height: 100%;
+	background-color: transparent;
+	border: none;
+}
+
+.addToFavourites img {
+	height: var(--fz-big);
 }
