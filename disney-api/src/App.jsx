@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import { Navbar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home';
 import { Footer } from './components/Footer/Footer';
+import { FavouriteCharacters } from './components/FavouriteCharacters/FavouriteCharacters';
 
 const App = () => {
 	return (
@@ -11,8 +12,8 @@ const App = () => {
 				<Navbar />
 			</div>
 			<Routes>
-				<Route path="/" element={<Home />}></Route>
-				<Route path="/favourites" element={<h1>Favourite Characters</h1>}></Route>
+				<Route path="/" element={<Home />} />
+				<Route path="/favourites" element={<FavouriteCharacters />} />
 			</Routes>
 			<div className={styles.footer}>
 				<Footer />
