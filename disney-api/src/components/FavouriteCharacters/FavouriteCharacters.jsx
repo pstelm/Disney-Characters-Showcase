@@ -13,7 +13,7 @@ export const FavouriteCharacters = () => {
 			if (!text) {
 				return true;
 			} else {
-				return character && character.title.toLowerCase().includes(text.toLowerCase());
+				return character && character.name.toLowerCase().includes(text.toLowerCase());
 			}
 		});
 		setFilteredCharacters(searchedCharacters);
