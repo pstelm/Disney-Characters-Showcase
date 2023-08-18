@@ -2,43 +2,23 @@ import { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
 import { PopularCharacterCard } from '../PopularCharacterCard/PopularCharacterCard';
+import useDataContext from '../../context/DataContext';
 
 export const Home = () => {
 	const [charactersList, setCharactersList] = useState([]);
 	const [filteredCharactersList, setFilteredCharactersList] = useState([]);
 	const [popularCharactersList, setPopularCharactersList] = useState([]);
-	const [favouritesList, setFavouritesList] = useState([]);
+
+	const { favouritesList, setFavouritesList } = useDataContext();
 
 	const getData = async () => {
 		try {
 			const apiData = await fetch('https://api.disneyapi.dev/character').then((response) =>
 				response.json()
 			);
-			// console.log('API data: ', apiData);
-			// setCharactersList(apiData.data);
-
 			const apiDataNext = await fetch(apiData.info.nextPage).then((response) => response.json());
-			// console.log('API data next: ', apiDataNext);
 
 			setCharactersList([...apiData.data, ...apiDataNext.data]);
-
-			// let prevDataNextPageURL = apiData.info.nextPage;
-			// console.log(prevDataNextPageURL);
-			// console.log(charactersList.length);
-
-			// while (charactersList.length < 100) {
-			// 	const apiDataNext = await fetch(prevDataNextPageURL).then((response) => response.json());
-			// 	// console.log('API data next: ', apiDataNext);
-			// 	setCharactersList((charactersList) => [...charactersList, ...apiDataNext.data]);
-			// 	prevDataNextPageURL = apiDataNext.info.nextPage;
-			// 	// console.log(prevDataNextPageURL);
-			// 	// setCharactersList(apiData.data);
-			// }
-
-			// const apiDataNext = await fetch(apiData.info.nextPage).then((response) => response.json());
-			// console.log('API data next: ', apiDataNext);
-
-			// setCharactersList([...charactersList.data, ...apiDataNext.data]);
 		} catch (error) {
 			console.log(error);
 		}
@@ -77,12 +57,7 @@ export const Home = () => {
 				<h2 className={styles.popularCharactersTitle}>Most popular Disney characters</h2>
 				{popularCharactersList && popularCharactersList.length > 0
 					? popularCharactersList.map((character) => (
-							<PopularCharacterCard
-								key={character._id}
-								{...character}
-								favouritesList={favouritesList}
-								setFavouritesList={setFavouritesList}
-							/>
+							<PopularCharacterCard key={character._id} {...character} />
 					  ))
 					: null}
 			</div>
@@ -90,12 +65,7 @@ export const Home = () => {
 			<div className={styles.allCharacters}>
 				{filteredCharactersList
 					? filteredCharactersList.map((character) => (
-							<CharacterCard
-								key={character._id}
-								{...character}
-								favouritesList={favouritesList}
-								setFavouritesList={setFavouritesList}
-							/>
+							<CharacterCard key={character._id} {...character} />
 					  ))
 					: null}
 			</div>
