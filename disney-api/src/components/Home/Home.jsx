@@ -45,12 +45,6 @@ export const Home = () => {
 		filterCharactersList();
 	}, [charactersList]);
 
-	// console.log(charactersList);
-	// console.log('Filtered:', filteredCharactersList);
-	// console.log('Sorted:', popularCharactersList);
-	// console.log(charactersList.length);
-	console.log('from Home: ', favouritesList);
-
 	return (
 		<>
 			<div className={styles.popularCharacters}>
