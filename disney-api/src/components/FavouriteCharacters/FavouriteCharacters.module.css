@@ -45,5 +45,5 @@
 
 .emptyListInfo {
 	color: var(--clr-light);
-	text-align: center;
+	margin-bottom: 2em;
 }

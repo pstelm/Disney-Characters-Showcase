@@ -42,12 +42,12 @@ export const FavouriteCharacters = () => {
 				/>
 			</div>
 			<div className={styles.allCharacters}>
-				{filteredCharacters ? (
+				{filteredCharacters && filteredCharacters.length > 0 ? (
 					filteredCharacters.map((character) => (
 						<CharacterCard key={character._id} {...character} />
 					))
 				) : (
-					<p className={styles.emptyListInfo}>Add character to favourites</p>
+					<p className={styles.emptyListInfo}>Choose your favourite Disney Characters!</p>
 				)}
 			</div>
 		</div>
