@@ -2,14 +2,11 @@ import { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
 import { PopularCharacterCard } from '../PopularCharacterCard/PopularCharacterCard';
-import useDataContext from '../../context/DataContext';
 
 export const Home = () => {
 	const [charactersList, setCharactersList] = useState([]);
 	const [filteredCharactersList, setFilteredCharactersList] = useState([]);
 	const [popularCharactersList, setPopularCharactersList] = useState([]);
-
-	const { favouritesList, setFavouritesList } = useDataContext();
 
 	const getData = async () => {
 		try {
