@@ -32,3 +32,9 @@
 	margin: 0 auto;
 	padding: 2em;
 }
+
+.emptyListInfo {
+	color: var(--clr-light);
+	margin-bottom: 2em;
+	font-size: var(--fz-big);
+}

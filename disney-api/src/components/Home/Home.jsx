@@ -46,11 +46,13 @@ export const Home = () => {
 		<>
 			<div className={styles.popularCharacters}>
 				<h2 className={styles.popularCharactersTitle}>Most popular Disney characters</h2>
-				{popularCharactersList && popularCharactersList.length > 0
-					? popularCharactersList.map((character) => (
-							<PopularCharacterCard key={character._id} {...character} />
-					  ))
-					: null}
+				{popularCharactersList && popularCharactersList.length > 0 ? (
+					popularCharactersList.map((character) => (
+						<PopularCharacterCard key={character._id} {...character} />
+					))
+				) : (
+					<p className={styles.emptyListInfo}>Downloading data...</p>
+				)}
 			</div>
 
 			<div className={styles.allCharacters}>
